@@ -19,9 +19,9 @@ class Predeal:
 
         # 02 blured
         # you can choose tmp parameters
-        tmp = (3, 3)
+        tmp = (5, 5)
         # choice = 0 no blure choice = 1 blure choice = 2 filter2D choice = 3 Gaussian
-        blured_img = self.blured(1, imgYCC , tmp)
+        blured_img = self.blured(2, imgYCC, tmp)
 
         # 03 treshing
         tresh_img = self.thresh(blured_img)
@@ -33,8 +33,15 @@ class Predeal:
         # 05 find_min_rec
         self.find_min_rec(img, contours)
         # draw images
-        # opencv的一个像素为：[B,G,R] ,matplotlib的一个像素为：[R,G,B]
+
+
+        # 06 subtract background and save
+        dstPath = '001.jpg'
+        self.save_img(img, contours,dstPath)
+
         plt.figure()
+        # opencv的一个像素为：[B,G,R] ,matplotlib的一个像素为：[R,G,B]
+
         img_ = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         plt.subplot(221), plt.imshow(img_), plt.title('original'), plt.axis('off')
 
@@ -57,7 +64,7 @@ class Predeal:
             print("no exists file = ", path)
             return None
 
-    def imgYCC(self,img):
+    def imgYCC(self, img):
         return cv2.cvtColor(img, cv2.COLOR_BGR2YCR_CB)
 
     def thresh(self, img):
@@ -69,7 +76,7 @@ class Predeal:
         #  gray_img
         #  plt.hist(img_gray.ravel(), 256)
         #  plt.show()
-        retval, im_at_fixed = cv2.threshold(img_gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        retval, im_at_fixed = cv2.threshold(img_gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
         return im_at_fixed
 
@@ -117,6 +124,16 @@ class Predeal:
             img = cv2.circle(img, center, radius, (0, 255, 0), 2)
 
         cv2.drawContours(img, contours, -1, (255, 0, 0), 1)
+
+    def save_img(self, img, contour, dstPath):
+        mask = np.ones(img.shape[:2], dtype="uint8") * 255
+
+        # Draw the contours on the mask
+        cv2.drawContours(mask, contour, -1, (0,0,0), -1)
+        # img = cv2.bitwise_and(img, img, mask=mask)
+        mask = cv2.bitwise_not(mask)
+        img = cv2.bitwise_and(img, img, mask=mask)
+        cv2.imwrite( dstPath, img)
 
 
 if __name__ == '__main__':
