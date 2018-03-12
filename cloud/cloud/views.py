@@ -14,7 +14,8 @@ def upload(request):
 		for line in obj.chunks():
 			f.write(line)
 		f.close()
-		img = cv2.imread(obj_path, 0)
+		img = cv2.imread(obj_path)
+		img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 		cv2.imwrite(obj_path_prefix+"_out.jpeg", img)
 
 		return HttpResponse("https://www.lihao7086.com/"+obj_path_prefix+"_out.jpeg")

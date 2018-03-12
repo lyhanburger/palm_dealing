@@ -1,0 +1,2 @@
+#后台运行， 输出日志
+nohup python3 manage.py runserver 0.0.0.0:8000 >logfile 2>&1 &

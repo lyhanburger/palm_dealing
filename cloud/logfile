@@ -1,0 +1,16 @@
+nohup: ignoring input
+[12/Mar/2018 14:38:22] "POST /upload HTTP/1.0" 200 122
+[12/Mar/2018 14:38:22] "GET /static/wx19f6f6231c92be20.o6zAJsxpqSQxKpD46dYelz9lP3FI.70d884600746f3eab6a4dd0790b2d523_out.jpeg HTTP/1.0" 200 17684
+[12/Mar/2018 14:38:59] "POST /upload HTTP/1.0" 200 94
+[12/Mar/2018 14:38:59] "GET /static/tmp_cd1e7a1c671abcf1fb119ee01101440e6834505ac88378e1_out.jpeg HTTP/1.0" 200 181799
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 12, 2018 - 14:37:58
+Django version 2.0, using settings 'cloud.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+hh
+hh
+[12/Mar/2018 14:42:46] "POST /upload HTTP/1.0" 200 94
+[12/Mar/2018 14:42:47] "GET /static/tmp_aba363560dd37f4d14f953ca5ec102184a4be7262acf4e3c_out.jpeg HTTP/1.0" 200 181684
