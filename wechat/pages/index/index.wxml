@@ -1,4 +1,4 @@
 <!--index.wxml-->  
-<button style="margin:30rpx;" bindtap="onLoad">上传</button>  
+<button style="margin:30rpx;" bindtap="upLoad">上传</button>  
 <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 100%; height: 450rpx"/>  
 <view>{{content}}</view>

@@ -6,7 +6,8 @@ Page({
     tempFilePaths: '',
     content:"https://www.lihao7086.com/download"
   },
-onLoad: function () {
+onLoad: function(){},
+upLoad: function () {
 	wx.chooseImage({
 	  success: function(res) {
 	    var tempFilePaths = res.tempFilePaths
