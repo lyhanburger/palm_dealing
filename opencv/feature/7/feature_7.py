@@ -1,12 +1,5 @@
 import cv2
-import argparse  
 import numpy as np
-parser = argparse.ArgumentParser()  
-parser.add_argument("image", help="input image name")  
-args = parser.parse_args() 
-IMAGE_FILE = args.image
-IMAGE_USER = IMAGE_FILE.rstrip(".jpg")
-print(IMAGE_USER)
 def split():
     # 测试分离通道的效果
     img = cv2.imread(IMAGE_USER+"_roi_7_out.jpg")
@@ -89,5 +82,11 @@ def test_houghline():
         cv2.line(img,(x1,y1),(x2,y2),(255,0,0),2)
         if i>10:break;
     cv2.imwrite("{0}_feature_7_houghline.jpg".format(IMAGE_USER),img)
-#test_houghline()
-#test_dilate()
+def feature_7(img_name):
+    IMAGE_FILE = img_name
+    IMAGE_USER = IMAGE_FILE.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
+    print(IMAGE_USER)
+    #test_houghline()
+    #test_dilate()
+if __name__ == '__main__':
+    feature_7("../../image/yangxuanyue/yangxuanyue.jpg")
