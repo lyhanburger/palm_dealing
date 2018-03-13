@@ -4,11 +4,14 @@ var app = getApp()
 Page({
   data: {
     tempFilePaths: '',
-    content:"https://www.lihao7086.com/download"
+    content:"https://www.lihao7086.com/download",
+	
   },
 onLoad: function(){},
 upLoad: function () {
 	wx.chooseImage({
+			count:1,
+			sizeType:['original'],
 	  success: function(res) {
 	    var tempFilePaths = res.tempFilePaths
 	    wx.uploadFile({
@@ -20,11 +23,14 @@ upLoad: function () {
 	      },
 	      success: function(res){
 	        var data = res.data
-			wx.previewImage({
-			  current: data, // 当前显示图片的http链接
-			  urls: [data] // 需要预览的图片http链接列表
-			})
+			var murls = data.split(",")
 			console.log(res.data)
+			console.log("murls is "+murls)
+			console.log("murls[0] is "+murls[0])
+			wx.previewImage({
+			  current: murls[0], // 当前显示图片的http链接
+			  urls:[murls[0],murls[1],murls[2],murls[3],murls[4],murls[5]] // 需要预览的图片http链接列表
+			})
 			
 	      }
 	    })
