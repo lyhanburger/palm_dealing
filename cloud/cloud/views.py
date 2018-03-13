@@ -3,6 +3,7 @@ from django.shortcuts import render
 import os
 from django.views.decorators.csrf import csrf_exempt
 import cv2
+from opencv.test import test
 @csrf_exempt
 def upload(request):
 	print("hh")
