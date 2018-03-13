@@ -29,5 +29,5 @@ def cutout(img_file):
         largest_contour = contours[ci]
     cv2.drawContours(final_Contour, [largest_contour], 0, (0, 255, 0), 4)
     cv2.imwrite("{0}_contour.jpg".format(IMAGE_USER),final_Contour)
-if __name__ == __main__:
+if __name__ == '__main__':
     cutout("../image/yangxuanyue/yangxuanyue.jpg")
