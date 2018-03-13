@@ -21,5 +21,13 @@ def upload(request):
 #		img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #		cv2.imwrite(obj_path_prefix+"_out.jpeg", img)
 		cutout.cutout(obj_path)
+		roi.roi(obj_path)
 		print(obj_path)
-		return HttpResponse("https://www.lihao7086.com/"+obj_path_prefix+"_contour.jpg")
+		return HttpResponse(
+		"https://www.lihao7086.com/"+obj_path_prefix+"_contour.jpg"+
+		",https://www.lihao7086.com/"+obj_path_prefix+"_skin.jpg"
+		",https://www.lihao7086.com/"+obj_path_prefix+"_roi_main_out.jpg"
+		",https://www.lihao7086.com/"+obj_path_prefix+"_roi_10_out.jpg"
+		",https://www.lihao7086.com/"+obj_path_prefix+"_roi_9_out.jpg"
+		",https://www.lihao7086.com/"+obj_path_prefix+"_roi_7_out.jpg"
+		)
