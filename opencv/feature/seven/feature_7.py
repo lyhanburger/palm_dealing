@@ -26,9 +26,11 @@ def test_blur():
 def test_threshold():
     # 测试二值化
     blurred = cv2.imread(IMAGE_USER+"_feature_7_blur_1.jpg")
-    for i in range(80,95,1):
-        ret,thresh1=cv2.threshold(blurred,i,255,cv2.THRESH_BINARY)
-        cv2.imwrite(IMAGE_USER+"_feature_7_threshold_{0}.jpg".format(i),thresh1)
+#    for i in range(80,95,1):
+#        ret,thresh1=cv2.threshold(blurred,i,255,cv2.THRESH_BINARY)
+#        cv2.imwrite(IMAGE_USER+"_feature_7_threshold_{0}.jpg".format(i),thresh1)
+    ret,thresh1=cv2.threshold(blurred,88,255,cv2.THRESH_BINARY)
+    cv2.imwrite(IMAGE_USER+"_feature_7_threshold_{0}.jpg".format(88),thresh1)
 def test_sobel():
     img = cv2.imread(IMAGE_USER+"_roi_7_out.jpg",0)
     x = cv2.Sobel(img,cv2.CV_16S,1,0)  
@@ -83,10 +85,14 @@ def test_houghline():
         if i>10:break;
     cv2.imwrite("{0}_feature_7_houghline.jpg".format(IMAGE_USER),img)
 def feature_7(img_name):
+    global IMAGE_FILE
+    global IMAGE_USER
     IMAGE_FILE = img_name
     IMAGE_USER = IMAGE_FILE.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
     print(IMAGE_USER)
+    test_threshold()
     #test_houghline()
     #test_dilate()
+    return {"feature_7":True}
 if __name__ == '__main__':
     feature_7("../../image/yangxuanyue/yangxuanyue.jpg")
