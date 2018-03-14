@@ -33,6 +33,7 @@ def report(img_name, report_list):
     im = Image.new("RGB", (size_x, size_y), (255, 255, 255))
     dr = ImageDraw.Draw(im)
     font_size = 14
+    print(os.path.join("fonts","msyh.ttf"))
     font = ImageFont.truetype(os.path.join("fonts", "msyh.ttf"), font_size)
     pos = 0
     fill_width = int(size_x/font_size) - 1
