@@ -19,7 +19,8 @@ db = {
 
 
 
-def report(report_list):
+def report(img_name, report_list):
+    IMAGE_USER = img_name.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
     #select
     report = []
     for key in report_list:
@@ -42,8 +43,7 @@ def report(report_list):
                 tstr = "    "+tstr
             dr.text((0,pos), tstr, font=font, fill="#444444")
             pos += (tstr.count("\n")+2)*font_size
-    im.show()
-    im.save("t.png")
+    im.save("{0}_report.jpg".format(IMAGE_USER))
 if __name__ == '__main__':
     report_list = {"feature_7":True,"feature_9":True}
-    print(report(report_list))
+    report("./t.png",report_list)
