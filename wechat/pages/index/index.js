@@ -29,7 +29,7 @@ upLoad: function () {
 			console.log("murls[0] is "+murls[0])
 			wx.previewImage({
 			  current: murls[0], // 当前显示图片的http链接
-			  urls:[murls[0],murls[1],murls[2]] // 需要预览的图片http链接列表
+			  urls:[murls[0],murls[1]] // 需要预览的图片http链接列表
 			})
 			
 	      }
