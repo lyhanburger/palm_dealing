@@ -4,7 +4,7 @@ var app = getApp()
 Page({
   data: {
     tempFilePaths: '',
-    content:"https://www.lihao7086.com/download",
+    content:"httdddps://www.lihao7086.com/download",
 	
   },
 onLoad: function(){},
