@@ -21,11 +21,17 @@ Scipalmist的作品简介
 ## 如何使用我们的作品 ##
 
 打开微信扫描下面的二维码或者搜索小程序“Scipalmist”
+
 <img src="readme_static/2dcode.png" width = "200" height = "200" alt="图片名称" align=center />
+
 进入程序后点击上传然后选择图片（照相或相册）。
+
 <img src="readme_static/ui.png" width = "250" height = "400" alt="图片名称" align=center />
+
 点击完成后就会上传，由于上传原图，所以需要一些上传时间。
 上传完毕后会自动显示两张图片（左右拖动），一张是手掌与各个roi的拼图，一张是诊断报告。
+
 <img src="readme_static/hand.jpg" width = "700" height = "500" alt="图片名称" align=center />
+
 长按图片可保存，单击图片退出。
 
