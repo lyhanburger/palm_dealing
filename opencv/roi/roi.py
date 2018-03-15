@@ -59,7 +59,7 @@ def roi(img_file):
     global contour_skin
     center_points = {}
     IMAGE_FILE = img_file
-    IMAGE_USER = IMAGE_FILE.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
+    IMAGE_USER = IMAGE_FILE.replace(".jpg","").replace(".jpeg","").replace(".png","")
     img = cv2.imread('{0}_contour.jpg'.format(IMAGE_USER))
     contour_skin = cv2.imread('{0}_contour_skin.jpg'.format(IMAGE_USER))
     img_rows, img_cols, _ = img.shape

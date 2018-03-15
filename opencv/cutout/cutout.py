@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 def cutout(img_file):
     IMAGE_FILE = img_file
-    IMAGE_USER = IMAGE_FILE.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
+    IMAGE_USER = IMAGE_FILE.replace(".jpg","").replace(".jpeg","").replace(".png","")
     print(IMAGE_USER)
     img = cv2.imread(IMAGE_FILE)
     #convert to YCrCb and filter

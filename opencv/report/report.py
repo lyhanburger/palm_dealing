@@ -21,7 +21,7 @@ db = {
 
 
 def report(img_name, report_list):
-    IMAGE_USER = img_name.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
+    IMAGE_USER = img_name.replace(".jpg","").replace(".jpeg","").replace(".png","")
     #select
     report = []
     for key in report_list:

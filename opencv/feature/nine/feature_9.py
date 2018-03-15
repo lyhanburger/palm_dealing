@@ -91,7 +91,7 @@ def feature_9(img_name):
     global IMAGE_FILE
     global IMAGE_USER
     IMAGE_FILE = img_name
-    IMAGE_USER = IMAGE_FILE.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
+    IMAGE_USER = img_name.replace(".jpg","").replace(".jpeg","").replace(".png","")
     print(IMAGE_USER)
     test_blur()
     test_threshold()

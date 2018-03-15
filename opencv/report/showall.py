@@ -1,7 +1,9 @@
 import cv2
 import numpy as np
 def showall(img_name,center_points):
-    IMAGE_USER = img_name.rstrip(".png").rstrip(".jpg").rstrip(".jpeg")
+    print(img_name)
+    IMAGE_USER = img_name.replace(".jpg","").replace(".jpeg","").replace(".png","")
+    print(IMAGE_USER)
     img = cv2.imread("{0}_contour_skin_roi.jpg".format(IMAGE_USER))
     bg = img.copy()
     bg[:,:] = (0,0,0)
