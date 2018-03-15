@@ -9,6 +9,7 @@ import opencv.feature.seven.feature_7 as feature_7
 import opencv.feature.nine.feature_9 as feature_9
 import opencv.feature.ten.feature_10 as feature_10
 import opencv.report.report as report
+import opencv.report.showall as showall
 @csrf_exempt
 def upload(request):
 	if request.method == "POST":
@@ -24,13 +25,15 @@ def upload(request):
 #		cv2.imwrite(obj_path_prefix+"_out.jpeg", img)
 		report_list = {}
 		cutout.cutout(obj_path)
-		roi.roi(obj_path)
+		center_points = roi.roi(obj_path)
 		report_list.update(feature_7.feature_7(obj_path))
 		report_list.update(feature_9.feature_9(obj_path))
+		report_list.update(feature_10.feature_10(obj_path))
 		report.report(obj_path,report_list)
+		showall.showall(obj_path,center_points)
+		
 		print(obj_path)
 		return HttpResponse(
-		"https://www.lihao7086.com/"+obj_path_prefix+"_contour.jpg"+
-		",https://www.lihao7086.com/"+obj_path_prefix+"_skin.jpg"
+		"https://www.lihao7086.com/"+obj_path_prefix+"_showall.jpg"+
 		",https://www.lihao7086.com/"+obj_path_prefix+"_report.jpg"
 		)
