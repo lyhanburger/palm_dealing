@@ -19,10 +19,12 @@ def test_blur():
     # 测试blur的参数
     image = cv2.imread(IMAGE_USER+"_roi_7_out.jpg")
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    for i in range (1,25,2):
-        # 从结果看， 9 比较合适
-        blurred = cv2.blur(gray,(i,i))
-        cv2.imwrite("{0}_feature_7_blur_{1}.jpg".format(IMAGE_USER, i ),blurred)
+#    for i in range (1,25,2):
+#        # 从结果看， 9 比较合适
+#        blurred = cv2.blur(gray,(i,i))
+#        cv2.imwrite("{0}_feature_7_blur_{1}.jpg".format(IMAGE_USER, i ),blurred)
+    blurred = cv2.blur(gray, (1,1))
+    cv2.imwrite("{0}_feature_7_blur_{1}.jpg".format(IMAGE_USER, 1 ),blurred)
 def test_threshold():
     # 测试二值化
     blurred = cv2.imread(IMAGE_USER+"_feature_7_blur_1.jpg")
@@ -30,6 +32,7 @@ def test_threshold():
 #        ret,thresh1=cv2.threshold(blurred,i,255,cv2.THRESH_BINARY)
 #        cv2.imwrite(IMAGE_USER+"_feature_7_threshold_{0}.jpg".format(i),thresh1)
     ret,thresh1=cv2.threshold(blurred,88,255,cv2.THRESH_BINARY)
+    print(thresh1.shape)
     cv2.imwrite(IMAGE_USER+"_feature_7_threshold_{0}.jpg".format(88),thresh1)
 def test_sobel():
     img = cv2.imread(IMAGE_USER+"_roi_7_out.jpg",0)
@@ -90,6 +93,7 @@ def feature_7(img_name):
     IMAGE_FILE = img_name
     IMAGE_USER = IMAGE_FILE.rstrip(".jpg").rstrip(".jpeg").rstrip(".png")
     print(IMAGE_USER)
+    test_blur()
     test_threshold()
     #test_houghline()
     #test_dilate()

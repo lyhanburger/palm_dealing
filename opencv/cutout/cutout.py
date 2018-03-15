@@ -27,7 +27,10 @@ def cutout(img_file):
                 maxArea = area
                 ci = i
         largest_contour = contours[ci]
-    cv2.drawContours(final_Contour, [largest_contour], 0, (0, 255, 0), 4)
+    cv2.drawContours(final_Contour, [largest_contour], 0, (0, 255, 0), 10)
     cv2.imwrite("{0}_contour.jpg".format(IMAGE_USER),final_Contour)
+    cv2.drawContours(skin, [largest_contour], 0, (0, 255, 0), 10)
+    cv2.imwrite("{0}_contour_skin.jpg".format(IMAGE_USER),skin)
+
 if __name__ == '__main__':
     cutout("../image/yangxuanyue/yangxuanyue.jpg")

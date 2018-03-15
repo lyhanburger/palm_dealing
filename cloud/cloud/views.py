@@ -7,6 +7,7 @@ import opencv.cutout.cutout as cutout
 import opencv.roi.roi as roi
 import opencv.feature.seven.feature_7 as feature_7
 import opencv.feature.nine.feature_9 as feature_9
+import opencv.feature.ten.feature_10 as feature_10
 import opencv.report.report as report
 @csrf_exempt
 def upload(request):
