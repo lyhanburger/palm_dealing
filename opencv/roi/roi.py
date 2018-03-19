@@ -74,6 +74,7 @@ def roi(img_file):
     defects = defects[:,0,:]
     temp=sorted(defects,key=lambda entity:entity[3],reverse=True)
     points = []
+    cv2.imwrite("{0}_contour_anchor.jpg".format(IMAGE_USER),contour_skin )
     for i in range(4):
         s,e,f,d = temp[i]
         far = tuple(cnt[f][0])
@@ -88,8 +89,11 @@ def roi(img_file):
         points.append(tuple(cnt[left,0]))
         points.append(tuple(cnt[right,0]))
         cv2.circle(img,far,14,[0,0,255],-1)
-        cv2.circle(img,tuple(cnt[left][0]),14,[255,255,255],-1)
-        cv2.circle(img,tuple(cnt[right][0]),14,[0,255,255],-1)
+        cv2.circle(img,tuple(cnt[left][0]),44,[255,255,255],-1)
+        cv2.circle(contour_skin,tuple(cnt[left][0]),44,[255,255,255],-1)
+        cv2.circle(img,tuple(cnt[right][0]),44,[0,255,255],-1)
+        cv2.circle(contour_skin,tuple(cnt[right][0]),44,[0,255,255],-1)
+    cv2.imwrite("{0}_contour_anchor.jpg".format(IMAGE_USER),contour_skin )
     points = sorted(points, key=lambda x:x[0])
     #roi_main(img,points)
     #roi_10(img,points)
