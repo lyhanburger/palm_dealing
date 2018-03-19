@@ -2,6 +2,7 @@
 <div align="center">
 <img src="readme_static/frame.jpg" width = "600" height = "400" alt="图片名称" align=center />   
 </div> 
+
 ### Wechat ###   
 我们在客户端上选择微信平台的小程序，因为它兼容性好且占用户资源少。   
 小程序的实现上传图片给服务器，接受并显示服务器回传的诊断报告。   
