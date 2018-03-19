@@ -4,7 +4,6 @@ var app = getApp()
 Page({
   data: {
     tempFilePaths: '',
-    content:"httdddps://www.lihao7086.com/download",
 	
   },
 onLoad: function(){},
@@ -61,11 +60,9 @@ upLoad: function () {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片  
         _this.setData({
           tempFilePaths: res.tempFilePaths,
-          content:"success"
         })
       },
       fail:function(res){
-        content:"fails"
       }
     })
   }
