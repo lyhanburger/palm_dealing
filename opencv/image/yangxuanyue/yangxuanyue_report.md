@@ -1,2 +1,2 @@
 ## 诊断报告  
-![showall](yangxuanyue_showall.jpg)
+![showall](http://localhost:8000/static/yangxuanyue_showall.jpg)
