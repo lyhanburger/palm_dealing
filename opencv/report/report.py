@@ -24,7 +24,9 @@ def report(img_name, report_list):
     mdstr += "# 诊断报告  \n"
     mdstr += "**掌纹一览**  \n"
     mdstr += "------ \n"
-    mdstr += "![showall](http://localhost:8000/{0}_showall.jpg)  \n".format(IMAGE_USER)
+    mdstr += "![showall](https://www.lihao7086.com/{0}_showall.jpg)  \n".format(IMAGE_USER)
+#    mdstr += "![showall](http://localhost:8000/{0}.jpg)  \n".format(IMAGE_USER)
+   # mdstr += "![showall](http://localhost:8000/{0}_showall.jpg)  \n".format(IMAGE_USER)
     for feature in ["feature_7","feature_9","feature_10"]:
         mdstr += \
     '''
@@ -43,7 +45,7 @@ def report(img_name, report_list):
     with open("{0}_report.md".format(IMAGE_USER),"w") as  file:
         file.write(mdstr)
 
-    os.system("md2pdf --theme=github --output "+IMAGE_USER+"_report.pdf "+IMAGE_USER+"_report.md ")
+    os.system("md2pdf --theme=github --output "+IMAGE_USER+"_report.pdf "+IMAGE_USER+"_report.md;sleep 3 ")
 if __name__ == '__main__':
     report_list = {"feature_7":True,"feature_9":True}
     report("../image/yangxuanyue/yangxuanyue.jpg",report_list)
