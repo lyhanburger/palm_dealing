@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
-import markdown
-import sys
-import os
+from PIL import Image, ImageFont, ImageDraw
+def fill(str_in, width):
+    i = 0
+    str_out = ""
+    for char in str_in:
+        str_out+=char
+        i = (i+1)%width
+        if i==0:str_out+="\n"
+    return str_out
+
+
         
 db = {
         "feature_7":["7线[太阳线]", "主要反映血压的高低异常，临床大量病例统计显示，7线形成，但未切过1线， 多提示低血压， 若切过2线， 多提示高血压。还可反映血压异常，高血脂，心机缺血"],
@@ -19,13 +27,25 @@ def report(img_name, report_list):
     for key in report_list:
         if report_list[key] == True:
             report.append(db[key])
-    mdstr = ""
-    mdstr += "## 诊断报告  \n"
-    mdstr += "![showall]({0}_showall.jpg)".format("yangxuanyue")
-    with open("{0}_report.md".format(IMAGE_USER),"w") as  file:
-        file.write(mdstr)
-
-    os.system("md2pdf --theme=github --output "+IMAGE_USER+"_report.pdf "+IMAGE_USER+"_report.md ")
+   #draw 
+  
+    size_x = 400 
+    size_y = 800
+    im = Image.new("RGB", (size_x, size_y), (255, 255, 255))
+    dr = ImageDraw.Draw(im)
+    font_size = 14
+    print(os.path.join("fonts","msyh.ttf"))
+    font = ImageFont.truetype(os.path.join("fonts", "msyh.ttf"), font_size)
+    pos = 0
+    fill_width = int(size_x/font_size) - 1
+    for repo in report:
+        for nu,line in enumerate(repo):
+            tstr = fill(line, fill_width)
+            if nu!=0:
+                tstr = "    "+tstr
+            dr.text((0,pos), tstr, font=font, fill="#444444")
+            pos += (tstr.count("\n")+2)*font_size
+    im.save("{0}_report.jpg".format(IMAGE_USER))
 if __name__ == '__main__':
     report_list = {"feature_7":True,"feature_9":True}
-    report("../image/yangxuanyue/yangxuanyue.jpg",report_list)
+    report("./t.png",report_list)
