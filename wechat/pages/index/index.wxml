@@ -1,3 +1,12 @@
 <!--index.wxml-->  
 <button style="margin:30rpx;" bindtap="upLoad">上传</button>  
-<image src="{{tempFilePaths }}" mode="aspecFill" style="width: 100%; height: 450rpx"/>  
+<button style="margin:30rpx;" bindtap="upLoadDemo_fast">上传示例图片</button>  
+<view class="classname">
+<image src="out.jpg" mode="aspecFit" style="width: 70%; height: 550rpx"/>  
+</view>
+<view class="classname">
+<text>示例图片</text>
+</view>
+<view class="classname">
+<text>{{content}} </text>
+</view>

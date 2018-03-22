@@ -19,3 +19,9 @@
 .usermotto {
   margin-top: 200px;
 }
+view{
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+}
