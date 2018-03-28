@@ -45,8 +45,7 @@
 
 效果图如下所示   
 <div align="center">
-<img src="readme_static/hand-1.jpg" width = "400" height = "500" alt="图片名称" align=center />
-<img src="readme_static/report.jpg" width = "400" height = "500" alt="图片名称" align=center />   
+<img src="readme_static/report.jpeg" width = "350" height = "900" alt="图片名称" align=center />   
 </div>
    
 #### Database&Neural Network ####   
