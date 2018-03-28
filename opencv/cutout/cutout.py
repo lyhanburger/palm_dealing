@@ -6,9 +6,14 @@ def cutout(img_file):
     print(IMAGE_USER)
     img = cv2.imread(IMAGE_FILE)
     #convert to YCrCb and filter
-    lower = np.array([0,129,70], np.uint8)#yangxuanyue
-    #lower = np.array([0,139,70], np.uint8)#lihao
-    upper = np.array([255,180,127], np.uint8)
+# old
+#    lower = np.array([0,129,70], np.uint8)#yangxuanyue
+#    #lower = np.array([0,139,70], np.uint8)#lihao
+#    upper = np.array([255,180,127], np.uint8)
+# new
+    lower = np.array([0,137,100], np.uint8)#yangxuanyue
+    upper = np.array([255,175,118], np.uint8)
+	
     ycrcb = cv2.cvtColor(img, cv2.COLOR_BGR2YCR_CB)
     mask = cv2.inRange(ycrcb, lower, upper)
     skin = cv2.bitwise_and(img, img, mask=mask)
