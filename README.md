@@ -2,6 +2,7 @@ Scipalmist的作品简介
 ===================
 #### 点击[这里](http://www.lihao7086.com:8001)查看我们的`官方主页`,里面有最详细的说明  
 #### 点击[这里](https://github.com/KiyomiHan/palm_dealing)查看我们的`github`,里面有我们的所有代码 
+#### 点击[这里](https://github.com/KiyomiHan/palm_dealing/blob/master/tech_frame.md)查看我们的`技术架构`
 
 
 ## 我们的目的 ##
@@ -24,12 +25,12 @@ Scipalmist的作品简介
 
 ## 如何使用我们的作品 ##
 
-打开微信扫描下面的二维码或者搜索小程序“Scipalmist”  
-<div align = "center"><img src="readme_static/2dcode.png" width = "200" height = "200" alt="图片名称" align=center /> </div> 
-进入程序后点击上传然后选择图片（照相或相册）。  
-<div align = "center"><img src="readme_static/ui.png" width = "250" height = "400" alt="图片名称" align=center /> </div>
-点击完成后就会上传，由于上传原图，所以需要一些上传时间。  
-上传完毕后会自动显示两张图片（左右拖动），一张是手掌与各个roi的拼图，一张是诊断报告。  
-<div align = "center"><img src="readme_static/hand.jpg" width = "700" height = "500" alt="图片名称" align=center /></div>
-<div align = "center"><img src="readme_static/report.jpg" width = "300" height = "600" alt="图片名称" align=center /></div>
-长按图片可保存，单击图片退出。  
+搜索小程序“scipalmist”  
+<div align = "center"><img src="readme_static/page.jpeg" width = "250" height = "500" alt="图片名称" align=center /> </div>
+您可以点击`上传` 然后选择您要上传的照片，目前算法的鲁棒性并不好，请尽可能按照示例图片的手势来拍照.  
+如果超过１分钟没有反馈则说明识别失败．这是一为肤色检测的方法对环境的适应性不高，我们正在尝试用深度学习来解决这一问题.   
+您也可以点击`上传示例图片`来上传我们预置好的图片，查看返回结果  
+
+点击完成后就会上传，由于上传原图，所以需要一些上传时间.  
+上传完毕后，服务器会将处理后的图片和诊断报告整合为一个pdf，返回给客户端
+<div align = "center"><img src="readme_static/report.jpeg" width = "500" height = "1500" alt="图片名称" align=center /></div>
