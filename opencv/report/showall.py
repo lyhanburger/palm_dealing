@@ -14,7 +14,8 @@ def showall(img_name,center_points):
     area_5678 = cv2.resize(img, None, fx = 0.5, fy = 0.5, interpolation = cv2.INTER_CUBIC)
     bg[trows:3*trows,tcols:3*tcols] =  area_5678
 
-    area_3 = cv2.imread("{0}_feature_7_threshold_88.jpg".format(IMAGE_USER))
+#    area_3 = cv2.imread("{0}_feature_7_threshold_88.jpg".format(IMAGE_USER))
+    area_3 = cv2.imread("{0}_roi_7_out.jpg".format(IMAGE_USER))
     xrows, xcols,_ = area_3.shape
     area_3 = cv2.resize(area_3, None, fx = tcols/xcols, fy = trows/xrows, interpolation = cv2.INTER_CUBIC)
     bg[:trows,3*tcols:] = area_3
@@ -24,7 +25,7 @@ def showall(img_name,center_points):
     cv2.putText(bg, "F7", (3*tcols,120), cv2.FONT_HERSHEY_SIMPLEX, 5, (0,0,255),20)
 
 
-    area_12 = cv2.imread("{0}_feature_10_threshold_88.jpg".format(IMAGE_USER))
+    area_12 = cv2.imread("{0}_roi_10_out.jpg".format(IMAGE_USER))
     xrows, xcols,_ = area_12.shape
     area_12 = cv2.resize(area_12, None, fx = 2*tcols/xcols, fy = trows/xrows, interpolation = cv2.INTER_CUBIC)
     bg[:trows,tcols:3*tcols] = area_12
@@ -33,7 +34,8 @@ def showall(img_name,center_points):
     cv2.line(bg,start_point, end_point,(155,255,0),10  )
     cv2.putText(bg, "F10", (tcols,120), cv2.FONT_HERSHEY_SIMPLEX, 5, (0,0,255),20)
 
-    area_de = cv2.imread("{0}_feature_9_threshold_88.jpg".format(IMAGE_USER))
+#    area_de = cv2.imread("{0}_feature_9_threshold_88.jpg".format(IMAGE_USER))
+    area_de = cv2.imread("{0}_roi_9_out.jpg".format(IMAGE_USER))
     xrows, xcols,_ = area_de.shape
     area_de = cv2.resize(area_de, None, fx = 2*tcols/xcols, fy = trows/xrows, interpolation = cv2.INTER_CUBIC)
     bg[3*trows:,tcols:3*tcols] = area_de
