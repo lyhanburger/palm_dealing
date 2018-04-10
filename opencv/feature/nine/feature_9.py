@@ -32,7 +32,7 @@ def test_threshold():
 #    for i in range(80,95,1):
 #        ret,thresh1=cv2.threshold(blurred,i,255,cv2.THRESH_BINARY)
 #        cv2.imwrite(IMAGE_USER+"_feature_9_threshold_{0}.jpg".format(i),thresh1)
-    ret,thresh1=cv2.threshold(blurred,88,255,cv2.THRESH_BINARY)
+    ret,thresh1=cv2.threshold(blurred,127,255,cv2.THRESH_BINARY)
     cv2.imwrite(IMAGE_USER+"_feature_9_threshold_{0}.jpg".format(88),thresh1)
 def test_sobel():
     img = cv2.imread(IMAGE_USER+"_roi_9_out.jpg",0)

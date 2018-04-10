@@ -14,6 +14,7 @@ import time
 @csrf_exempt
 def upload(request):
 	if request.method == "POST":
+		print("comes a post")
 		obj = request.FILES.get("file")
 		obj_path = os.path.join('static', obj.name)
 		obj_path_prefix = obj_path.replace(".jpg","").replace(".jpeg","").replace(".png","")
