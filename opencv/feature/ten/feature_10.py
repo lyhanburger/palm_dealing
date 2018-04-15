@@ -97,6 +97,6 @@ def feature_10(img_name):
     test_threshold()
     #test_houghline()
     #test_dilate()
-    return {"feature_10":True}
+    return ["10线"]
 if __name__ == '__main__':
     feature_10("../../image/yangxuanyue/yangxuanyue.jpg")
